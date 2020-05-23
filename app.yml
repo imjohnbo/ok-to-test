@@ -1,0 +1,13 @@
+# Example GitHub App configuration. 
+# Create your own using the GitHub, by app manifest, or helper libraries like Probot.
+name: Ok To Test
+url: http://example.com
+hook_attributes:
+  url: http://example.com/hooks
+redirect_url: http://example.com/manifest/creation/callback
+description: Ok To Test
+public: false
+default_events: []
+default_permissions:
+  contents: :write
+  metadata: :read
