@@ -9,7 +9,7 @@ GitHub Actions purposely limits the [secrets](https://help.github.com/en/actions
 
 Though this provides peace of mind, many projects depend on the fork pull request model. If you've configured a GitHub Actions test workflow to trigger on pull requests, and those tests require secrets, the secrets aren't available and the workflow fails.
 
-No longer with this workaround! 🥳 This template project shows an example [Prow](https://prow.k8s.io/command-help)-like `/ok-to-test` slash command configuration. This project is not affiliated with GitHub.
+No longer with this workaround, which shows an example [Prow](https://prow.k8s.io/command-help)-like `/ok-to-test` slash command configuration. 🥳 This project is not affiliated with GitHub.
 
 <p align="center">
     <img src="https://user-images.githubusercontent.com/2993937/82742525-6f9ef900-9d2d-11ea-86a1-e0e6b978faaf.png" width="600" />
