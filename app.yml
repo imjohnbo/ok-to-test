@@ -1,5 +1,5 @@
 # Example GitHub App configuration. 
-# Create your own using the GitHub, by app manifest, or helper libraries like Probot.
+# Create your own using the GitHub UI, by app manifest, or helper libraries like Probot.
 name: Ok To Test
 url: http://example.com
 hook_attributes:
