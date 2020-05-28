@@ -5,7 +5,7 @@
 
 GitHub Actions purposely limits the [secrets](https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets) available to pull requests from forks for security reasons:
 - [`GITHUB_TOKEN`](https://help.github.com/en/actions/configuring-and-managing-workflows/authenticating-with-the-github_token#permissions-for-the-github_token) is read-only
-- [Other secrets](https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets#using-encrypted-secrets-in-a-workflow) aren't available at all
+- [Other secrets](https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets#using-encrypted-secrets-in-a-workflow) aren't available at all 
 
 Though this provides peace of mind, many projects depend on the fork pull request model. If you've configured a GitHub Actions test workflow to trigger on pull requests, and those tests require secrets, the secrets aren't available and the workflow fails.
 
