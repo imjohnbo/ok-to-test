@@ -15,20 +15,21 @@ jobs:
 
     - name: Branch based PR checkout
       uses: actions/checkout@v2
-      if: github.event.pull_request.head.repo.full_name == github.repository
 
     # <insert integration tests needing secrets>
 
   # Repo owner has commented /ok-to-test on a (fork-based) pull request
   integration-fork:
     runs-on: ubuntu-latest
-    if: github.event_name == 'repository_dispatch'
+    if: 
+      github.event_name == 'repository_dispatch' &&
+      github.event.client_payload.slash_command.sha != '' &&
+      contains(github.event.client_payload.pull_request.head.sha, github.event.client_payload.slash_command.sha)
     steps:
 
     # Check out merge commit
     - name: Fork based /ok-to-test checkout
       uses: actions/checkout@v2
-      if: github.event_name == 'repository_dispatch'
       with:
         ref: 'refs/pull/${{ github.event.client_payload.pull_request.number }}/merge'
 
