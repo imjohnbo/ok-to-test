@@ -1,5 +1,5 @@
 # If someone with write access comments "/ok-to-test" on a pull request, emit a repository_dispatch event
-name: Ok To Test
+name: Label
 
 on:
   issue_comment:
@@ -30,4 +30,5 @@ jobs:
         reaction-token: ${{ secrets.GITHUB_TOKEN }}
         issue-type: pull-request
         commands: ok-to-test
+        named-args: true
         permission: write
