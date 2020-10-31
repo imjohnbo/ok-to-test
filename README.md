@@ -31,6 +31,7 @@ Note that this sequence also works for branch based pull requests, as you'd expe
 
 ## Setup
 
+- Copy the .github/workflow files into your repo and customize for your use case
 - Add an authentication [token](#Authentication) as a secret
 - Optional: create and install a GitHub App on the repo(s) if you choose that [authentication method](#Authentication)
 
