@@ -41,6 +41,7 @@ jobs:
     # Update check run called "integration-fork"
     - uses: actions/github-script@v1
       id: update-check-run
+      if: ${{ always() }}
       env:
         number: ${{ github.event.client_payload.pull_request.number }}
         job: ${{ github.job }}
