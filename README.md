@@ -17,7 +17,7 @@ No longer with this workaround, which shows an example [Prow](https://prow.k8s.i
 This project is not affiliated with GitHub.
 
 <p align="center">
-    <img src="https://user-images.githubusercontent.com/2993937/82742525-6f9ef900-9d2d-11ea-86a1-e0e6b978faaf.png" width="600" />
+    <img src="https://user-images.githubusercontent.com/2993937/101568108-0b2d4980-39a0-11eb-9e87-d838ae934097.png" width="600" />
 </p>
 
 ## Setup
