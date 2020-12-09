@@ -1,5 +1,8 @@
 # Ok To Test
-> Use GitHub Actions secrets in pull requests from forks 🍴🔑
+> _Example workflow configuration_ showing how to use GitHub Actions secrets in pull requests from forks 🍴🔑
+
+## Summary
+An [`Ok To Test`](https://github.com/imjohnbo/ok-to-test/blob/master/.github/workflows/ok-to-test.yml) workflow is configured so that when someone with write access to this repository comments `ok-to-test sha=<head-sha>` on a pull request from a fork, a "privileged" [`Integration tests`](https://github.com/imjohnbo/ok-to-test/blob/master/.github/workflows/integration.yml) workflow needing [secrets](https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets#about-encrypted-secrets) is triggered. In parallel, a "non-privileged" [`Unit tests`](https://github.com/imjohnbo/ok-to-test/blob/master/.github/workflows/unit.yml) workflow not needing secrets is triggered on any pull request.
 
 ## About
 
@@ -17,6 +20,17 @@ This project is not affiliated with GitHub.
     <img src="https://user-images.githubusercontent.com/2993937/82742525-6f9ef900-9d2d-11ea-86a1-e0e6b978faaf.png" width="600" />
 </p>
 
+## Setup
+
+This is a [template repository](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template#about-repository-templates) with three example workflows. Start by [creating a new repository](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template#creating-a-repository-from-a-template) ("Use this template"). Then, consider for your use case:
+1. [Which type of token](#Authentication) you'll use to emit the `repository_dispatch` event in [`Ok To Test`](https://github.com/imjohnbo/ok-to-test/blob/master/.github/workflows/ok-to-test.yml). Remember: if you choose GitHub App authentication (preferred), you must create _and install_ it on the repo(s) in which this configuration will run.
+2. Which workflow(s) need [secrets](https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets#about-encrypted-secrets). In this example, it's [`Integration tests`](https://github.com/imjohnbo/ok-to-test/blob/master/.github/workflows/integration.yml), and I would need to fill in my tests [here](https://github.com/imjohnbo/ok-to-test/blob/master/.github/workflows/integration.yml#L36).
+3. Which workflow(s) do not need [secrets](https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets#about-encrypted-secrets). In this example, it's [`Unit tests`](https://github.com/imjohnbo/ok-to-test/blob/master/.github/workflows/unit.yml). These types of workflows can simply trigger on pull request.
+
+## Usage
+
+As someone with write access, comment `/ok-to-test sha=<head-sha>` on an incoming pull request to set off this [Rube Goldberg machine](https://en.wikipedia.org/wiki/Rube_Goldberg_machine) 😄. The head `sha` is the first seven characters of the most recent commit of the incoming pull request. [For example](https://github.com/imjohnbo/ok-to-test/pull/5#issuecomment-635368312), `/ok-to-test sha=742c71a`.
+
 ## Example
 
 1. A fork pull request is opened.
@@ -28,12 +42,6 @@ This project is not affiliated with GitHub.
 7. The pull request status check is updated to reflect the success or failure of the integration test workflow.
 
 Note that this sequence also works for branch based pull requests, as you'd expect!
-
-## Setup
-
-- Copy the .github/workflow files into your repo and customize for your use case
-- Add an authentication [token](#Authentication) as a secret
-- Optional: create and install a GitHub App on the repo(s) if you choose that [authentication method](#Authentication)
 
 ## Authentication
 
