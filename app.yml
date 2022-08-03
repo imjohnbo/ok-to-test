@@ -6,7 +6,7 @@ hook_attributes:
   url: http://example.com/hooks
 redirect_url: http://example.com/manifest/creation/callback
 description: Ok To Test
-public: false
+public: true
 default_events: []
 default_permissions:
   contents: :write
