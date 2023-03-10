@@ -16,7 +16,7 @@ jobs:
     # Generate a GitHub App installation access token from an App ID and private key
     # To create a new GitHub App:
     #   https://developer.github.com/apps/building-github-apps/creating-a-github-app/
-    # See app.yml for an example app manifest - you can use dummy URLs when generating
+    # See app.yml for an example app manifest - you can use fake URLs when generating
     # the app such as example.com urls. They do not need to properly resolve for the
     # purpose that they app is being used for.
     - name: Generate token
