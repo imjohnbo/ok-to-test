@@ -71,7 +71,7 @@ Here we are using a GitHub App as an authentication entity, rather than a tradit
     - Metadata = 'Read-only'
 1. Click 'Create GitHub app'
 1. Click 'Generate Private key' (this will be downloaded to your computer), and take a note of the `App ID` field
-1. Install the GitHub app into your user or organization, by clicking 'Install' under the 'Install App' tab, and choose whether you want to give the app access to all of your user's / org's repositories, or just specific ones
+1. Install the GitHub App into your user or organization, by clicking 'Install' under the 'Install App' tab, and choose whether you want to give the app access to all of your user's / org's repositories, or just specific ones
 1. Go to the repository that you want to use `ok-to-test` with, and then `Settings > Secrets and variables > Actions` and create two new secrets:
     - `APP_ID` with the value for the `App ID` field that you noted earlier
     - `PRIVATE_KEY`, copying and pasting in the full contents of the Private Key file that you generated and downloaded earlier
