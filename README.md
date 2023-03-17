@@ -60,7 +60,7 @@ GitHub Apps have distinct identities on GitHub – no seat taken up by a machine
 
 ### Creating a GitHub App
 
-Here we are using a GitHub App as an authentication entity, rather than a traditional coding application. Below are some brief instructions on how to setup a GitHub App for this purpose, note that there are other methods of creating a GitHub App such as with a manifest file. _(The instructions below are for setting up an app within your user, but you can also do it for your organisation.)_
+Here we are using a GitHub App as an authentication entity. No code will be added to the GitHub App, instead we will be using its permissions when we execute our GitHub Workflows. rather than a traditional coding application. Below are some brief instructions on how to setup a GitHub App for this purpose, note that there are other methods of creating a GitHub App such as with a manifest file (e.g. one similar to [`app.yml`](/app.yml)). _(The instructions below are for setting up an app within your user, but you can also do it for your organization.)_
 
 1. Go to `Settings > Developer Settings > GitHub Apps`, and select `New GitHub App`.
 1. Enter a name for your app (this needs to be unique across GitHub), and fill in the required URL fields. You can fill in these URLs with fake values - they do not need to resolve, so you can use:
